@@ -1,9 +1,11 @@
 import { useCarrito } from '../context/CarritoContext'
+import { useTheme } from '../context/ThemeContext'
 import { FaWhatsapp, FaInstagram } from 'react-icons/fa'
 
 function Navbar({ onNavigate, paginaActiva }) {
   const usuario = JSON.parse(localStorage.getItem('usuario') || '{}')
   const { totalItems } = useCarrito()
+  const { darkMode, toggleTheme } = useTheme()
 
   return (
     <div className="navbar">
@@ -14,6 +16,7 @@ function Navbar({ onNavigate, paginaActiva }) {
   <span className="brand-icon">
     🧤
   </span>
+
 
   <div>
 
@@ -37,6 +40,16 @@ function Navbar({ onNavigate, paginaActiva }) {
         </div>
 
         <div className="navbar-icons">
+
+          <button
+            className="icon-btn theme-toggle"
+            title={darkMode ? 'Cambiar a tema claro' : 'Cambiar a tema oscuro'}
+            onClick={toggleTheme}
+            aria-label={darkMode ? 'Cambiar a tema claro' : 'Cambiar a tema oscuro'}
+          >
+            {darkMode ? '☀️' : '🌙'}
+          </button>
+
           {usuario?.id ? (
             <>
               <button className="icon-btn" title="Mi perfil" onClick={() => onNavigate('perfil')}>👤</button>
@@ -51,6 +64,9 @@ function Navbar({ onNavigate, paginaActiva }) {
             </button>
           )}
         </div>
+
+          
+
       </div>
 
       <div className="navbar-bottom">

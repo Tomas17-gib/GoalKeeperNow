@@ -5,6 +5,7 @@ const { requireAuth, requireTipo } = require('../middleware/auth')
 const router = express.Router()
 router.use(requireAuth, requireTipo('admin'))
 
+
 router.get('/stats', async (req, res) => {
   try {
     const [[u]] = await pool.query('SELECT COUNT(*) AS total FROM usuarios')

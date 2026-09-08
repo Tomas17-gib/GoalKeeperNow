@@ -7303,3 +7303,178 @@ font-style:italic;
 }
 
 }
+
+
+
+
+/* ========================================
+   TEMA CLARO / OSCURO
+   ======================================== */
+
+:root {
+    --tema-fondo: #F7F5F0;
+    --tema-card: #FFFFFF;
+    --tema-texto: #11203B;
+    --tema-texto-suave: #5B6B85;
+    --tema-linea: #E4E0D6;
+}
+
+[data-theme="dark"] {
+    --tema-fondo: #0B1220;
+    --tema-card: #151F2E;
+    --tema-texto: #F1F5F9;
+    --tema-texto-suave: #A8B3C2;
+    --tema-linea: #293548;
+}
+
+/* Fondo y texto general */
+html[data-theme="dark"],
+html[data-theme="dark"] body {
+    background: var(--tema-fondo);
+    color: var(--tema-texto);
+}
+
+/* Elementos principales */
+[data-theme="dark"] .page-shell,
+[data-theme="dark"] .dashboard-main {
+    color: var(--tema-texto);
+}
+
+/* Tarjetas */
+[data-theme="dark"] .card,
+[data-theme="dark"] .feature-box,
+[data-theme="dark"] .portero-card,
+[data-theme="dark"] .store-category-card,
+[data-theme="dark"] .store-featured-card,
+[data-theme="dark"] .coach-benefit-card,
+[data-theme="dark"] .payment-option {
+    background: var(--tema-card);
+    border-color: var(--tema-linea);
+}
+
+/* Textos */
+[data-theme="dark"] .card h2,
+[data-theme="dark"] .feature-box h3,
+[data-theme="dark"] .portero-card-body,
+[data-theme="dark"] .precio-tag,
+[data-theme="dark"] .store-featured-content h3,
+[data-theme="dark"] .coach-benefit-card h3,
+[data-theme="dark"] .payment-method-title,
+[data-theme="dark"] .payment-option strong {
+    color: var(--tema-texto);
+}
+
+[data-theme="dark"] .card p,
+[data-theme="dark"] .feature-box p,
+[data-theme="dark"] .portero-card-body p.desc,
+[data-theme="dark"] .store-featured-content p,
+[data-theme="dark"] .coach-benefit-card p,
+[data-theme="dark"] .payment-option p {
+    color: var(--tema-texto-suave);
+}
+
+/* Bordes */
+[data-theme="dark"] .section-heading {
+    border-color: var(--azul-cancha);
+}
+
+/* Navbar */
+[data-theme="dark"] .navbar {
+    background: rgba(15, 23, 42, 0.94);
+    border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+
+[data-theme="dark"] .navbar-brand h2 {
+    color: #F1F5F9;
+}
+
+[data-theme="dark"] .navbar-brand small {
+    color: #A8B3C2;
+}
+
+[data-theme="dark"] .navbar-search {
+    background: #151F2E;
+}
+
+[data-theme="dark"] .navbar-search input {
+    color: #F1F5F9;
+}
+
+[data-theme="dark"] .navbar-search input::placeholder {
+    color: #A8B3C2;
+}
+
+[data-theme="dark"] .navbar-icons .icon-btn {
+    background: #151F2E;
+    color: #F1F5F9;
+}
+
+/* Formularios */
+[data-theme="dark"] input,
+[data-theme="dark"] textarea,
+[data-theme="dark"] select {
+    color-scheme: dark;
+}
+
+[data-theme="dark"] .login-form-side {
+    background: var(--tema-fondo);
+}
+
+[data-theme="dark"] .login-box {
+    border-color: var(--tema-linea);
+}
+
+/* Categorías y estados */
+[data-theme="dark"] .store-category-card.active {
+    background: #2A2414;
+}
+
+[data-theme="dark"] .payment-option.active {
+    background: #172A3D;
+}
+
+[data-theme="dark"] .coach-day.unavailable {
+    background: #202938;
+}
+
+/* Transición general del tema */
+body,
+.navbar,
+.card,
+.feature-box,
+.portero-card,
+.store-category-card,
+.store-featured-card,
+.coach-benefit-card,
+.payment-option,
+.navbar-search,
+.navbar-icons .icon-btn {
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* ========================================
+   BOTÓN TEMA CLARO / OSCURO
+   ======================================== */
+
+.theme-toggle {
+    transition: transform 0.25s ease, background-color 0.25s ease;
+}
+
+.theme-toggle:hover {
+    transform: rotate(15deg) scale(1.08);
+}
+
+[data-theme="dark"] .theme-toggle {
+    background: #243247;
+    color: #FFD54F;
+}
+
+[data-theme="light"] .theme-toggle {
+    background: #F3F4F6;
+    color: #11203B;
+}
